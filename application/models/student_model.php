@@ -17,4 +17,12 @@ class Student_model extends CI_Model {
 
     }
 
+    public function get_student_info() {
+
+        $query = $this->db->get('student');
+
+        return $query->result();
+
+    }
+
 }

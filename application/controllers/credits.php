@@ -12,6 +12,14 @@ class Credits extends CI_Controller {
     //set index view
     public function index() {
         $this->load->view('credits_view');
+
+         // get student information from student_model
+
+         $database_data['students'] = $this->student_model->get_student_info(); 
+
+         $this->load->view('student_view', $database_data);
+
+        
     }
 
     //search studentID function
@@ -54,10 +62,6 @@ class Credits extends CI_Controller {
                 $this->session->set_flashdata('search_success', 'Student ID found');
 
                 redirect('credits');
-
-                // get student information from student_model
-
-                $student_data = $this->student_model->get_student_info();
 
             } else {
             //if studentID match NOT found, notify on credits_view unsuccessful search

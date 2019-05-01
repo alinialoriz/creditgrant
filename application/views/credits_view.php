@@ -85,7 +85,6 @@
                     <input type="text" name="student_course_result" id="student_course_result" class="form-control col-md-2" placeholder="Course Program">
             </div>
         </form>
-
     </div>
     <div class="section2">
         <div class=" col-md-12 border" style="margin: 15px auto;"></div>
@@ -121,7 +120,7 @@
         </table>
     </div>
     <div class="sample">
-        <p> <?php echo site_url('credits/search') ?>; </p>
+    
     </div>
 </div>
 
@@ -130,25 +129,25 @@
 <!-- <?php 
 
 
-function getStudent() {
+// function getStudent() {
 
-$connection = mysqli_connect('localhost', 'root', 'Imllu.143', 'webeng_project');
-$query = "SELECT * FROM Student";
-        $result = mysqli_query($connection, $query);
+// $connection = mysqli_connect('localhost', 'root', 'Imllu.143', 'webeng_project');
+// $query = "SELECT * FROM Student";
+//         $result = mysqli_query($connection, $query);
 
-        if (!$result) {
-            die ('Query FAILED!' . mysqli_error());
-        } 
+//         if (!$result) {
+//             die ('Query FAILED!' . mysqli_error());
+//         } 
     
-        while($result){
-            return $result;
-        }
-}
+//         while($result){
+//             return $result;
+//         }
+// }
 
-$student = getStudent();
-foreach ($student as $individualStudent) {
-    echo $individualStudent['studentID'] . "<br>";
-}
+// $student = getStudent();
+// foreach ($student as $individualStudent) {
+//     echo $individualStudent['studentID'] . "<br>";
+// }
 
 ?> -->
 
