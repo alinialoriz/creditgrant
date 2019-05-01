@@ -50,7 +50,7 @@ $active_record = TRUE;
 
 $db['default']['hostname'] = 'localhost';
 $db['default']['username'] = 'root';
-$db['default']['password'] = 'Imllu.143';
+$db['default']['password'] = '123409';
 $db['default']['database'] = 'webeng_project';
 $db['default']['dbdriver'] = 'mysqli';
 $db['default']['dbprefix'] = '';
