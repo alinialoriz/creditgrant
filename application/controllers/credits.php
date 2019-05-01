@@ -55,6 +55,9 @@ class Credits extends CI_Controller {
 
                 redirect('credits');
 
+                // get student information from student_model
+
+                $student_data = $this->student_model->get_student_info();
 
             } else {
             //if studentID match NOT found, notify on credits_view unsuccessful search
