@@ -37,7 +37,7 @@ class Credits extends CI_Controller {
         //else if search input is valid, check if database contains the studentID input   
             $studentID = $this->input->post('studentID');
 
-            $result = $this->student_model->search_student($studentID);
+            $result = $this->student_model->search_studentID($studentID);
             
             //if studentID match found
             if($result) {
