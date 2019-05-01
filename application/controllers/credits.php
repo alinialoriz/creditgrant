@@ -61,8 +61,6 @@ class Credits extends CI_Controller {
 
                 $this->session->set_flashdata('search_success', 'Student ID found');
 
-                // redirect('credits');
-
             } else {
             //if studentID match NOT found, notify on credits_view unsuccessful search
                 $this->session->set_flashdata('search_failed', 'Student ID not found'); 
