@@ -11,32 +11,35 @@
     @import url('https://fonts.googleapis.com/css?family=Lalezar|Open+Sans');
 
     .page-title {
-        font-family: 'Lalezar', cursive;
+        font-family: 'Open Sans';
         font-size: 1.5rem;
         letter-spacing: .1em;
     }
 
     body {
-        background-color: #C70120;
+        background-color: rgb(40,40,40);
+        font-family: 'Open Sans';
     }
-    .section1, .section2{
-        background-color: white;
-        padding: 10px 20px;
-        margin-top: 20px;
-        border-radius: 10px
+    .section2, nav {
+        background-color: rgb(255,255,255, 0.85);
+    } 
+    
+    .section1{
+        padding: 20px 20px;
     }
-    .col-form-label {
-        font-size:10px;
+
+    .error-message {
+        color:whitesmoke;
     }
 
     </style>
 
 </head>
 <body>
-    
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light ">
     <div class="container">
-        <a class="navbar-brand" href="#"><img src="assets/images/Western_Sydney_University_emblem.png" width=40></a>
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
             <a class="nav-link page-title" href="#">Credit Grant Advisement <span class="sr-only">(current)</span></a>
@@ -47,45 +50,44 @@
 
 <!-- Student's personal information -->
 <div class="container content-area">
-    <!-- Search field for student ID number -->
-    <div class="section1">
 
-        <!-- Display studentID search input field validation errors here -->
-        
-            <?php if ($this->session->flashdata('errors')): ?>
-            <?php echo $this->session->flashdata('errors'); ?>
-            <?php endif; ?>
+    <!-- Search input field for student ID number -->
+    <div class="section1 col-md-6 offset-md-4">
 
-         <!-- Display studentID search input field validation errors here -->
-        <p class="bg-success">
-
-            <?php if($this->session->flashdata('search_success')): ?>
-            <?php echo $this->session->flashdata('search_success'); ?>
-            <?php endif;?>
-
-        </p>
-
-        <p class="bg-danger">
-
-            <?php if($this->session->flashdata('search_failed')): ?>
-            <?php echo $this->session->flashdata('search_failed'); ?> 
-            <?php endif;?>
-
-        </p>
-
-        <form class="mt-4" action="credits/search" method="post">
-            <div class="form-inline my-2 my-lg-0">
-                    <input type="text" name="studentID" id="search_student_id" class="form-control mr-sm-2 col-md-2" placeholder="Search Student ID">
+        <form action="credits/search" method="post">
+            <div class="form-inline">
+                    <input type="text" name="studentID" id="search_student_id" class="form-control mr-sm-2 col-md-6" placeholder="Search Student ID">
                     <button class="btn btn-danger my-2 my-sm-0" id="btn_search_student" type="submit">Search</button>
-                    <label class="col-md-1 col-form-label">Student ID</label>
-                    <input type="text" name="student_id_result" id="student_id_result" class="form-control col-md-2" placeholder="Student ID">
-                    <label class="col-md-1 col-form-label">Student Name</label>
-                    <input type="text" name="student_name_result" id="student_name_result" class="form-control col-md-2" placeholder="Student Name">
-                    <label class="col-md-1 col-form-label">Course Program</label>
-                    <input type="text" name="student_course_result" id="student_course_result" class="form-control col-md-2" placeholder="Course Program">
             </div>
         </form>
+
     </div>
+
+    <!-- Displays search input field validation errors -->
+    <div class="error-message col-md-6 offset-md-3">
+
+        <!-- Displays studentID search input field validation errors -->
+        <?php if ($this->session->flashdata('errors')): ?>
+        <?php echo $this->session->flashdata('errors'); ?>
+        <?php endif; ?>
+
+    </div>
+
+    <!-- Displays search result notifactions -->
+    <div class="col-md-6 offset-md-3">
+
+        <!-- Displays successful studentID search -->
+        <?php if($this->session->flashdata('search_success')): ?>
+        <?php echo "<p class=' rounded bg-success text-center'>" . $this->session->flashdata('search_success') . "<p>"; ?>
+        <?php endif;?>
+
+        <!-- Displays successful studentID search -->
+        <?php if($this->session->flashdata('search_failed')): ?>
+        <?php echo "<p class=' rounded bg-danger text-center'>" .$this->session->flashdata('search_failed') . "<p>"; ?> 
+        <?php endif;?>
+
+    </div>
+   
     <div class="section2">
         <div class=" col-md-12 border" style="margin: 15px auto;"></div>
 
@@ -120,7 +122,7 @@
         </table>
     </div>
     <div class="sample">
-    
+
     </div>
 </div>
 
